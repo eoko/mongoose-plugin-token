@@ -20,7 +20,7 @@ module.exports = function tokenPlugin(schema, opt) {
   if (options.createIndex) {
     schema
       .path(options.fieldName)
-      .index({ unique: true });
+      .index({ unique: true, sparse: true });
   }
 
   schema.pre('save', function save(next) {
